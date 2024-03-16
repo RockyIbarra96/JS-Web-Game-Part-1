@@ -7,12 +7,6 @@ function newImage(url, left, bottom){
     newObject.style.left = left + 'px'
     newObject.style.bottom = bottom + 'px'
     document.body.append(newObject)
-
-    newObject.addEventListener('dblclick', function(){
-        newObject.remove()
-    })
-    
-    
 }
 
 newImage('assets/green-character.gif', 100, 100);
@@ -24,7 +18,20 @@ newImage('assets/well.png', 500, 425)
 
 
 
-    let newItem = newImage
+function newItem(url, left, bottom){
+    let newItem = document.createElement('img')
+    newItem.src = url
+    newItem.style.position = 'fixed'
+    newItem.style.left = left + 'px'
+    newItem.style.bottom = bottom + 'px'
+    document.body.append(newItem)
+
+    newItem.addEventListener('dblclick', function(){
+        newItem.remove()
+        console.log('works')
+    })
+}
+
 newItem('assets/sword.png', 500, 405)
 newItem('assets/shield.png', 165, 185)
 newItem('assets/staff.png', 600, 100)
